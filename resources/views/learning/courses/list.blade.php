@@ -13,12 +13,15 @@
                 <div class="mix col-lg-3 col-md-4 col-sm-6">
                     <div class="course-item">
                         <div class="course-info">
+                            <div class="img">
+                                <img src="{{ $course->picture }}" alt="{{ $course->title }}" style="border-radius: 12px;">
+                            </div>
                             <div class="course-text">
                                 <h5>{{ $course->title }}</h5>
                                 <div class="docente">Docente: {{ $course->teacher->name }}</div>
                             </div>
                             <div class="course-author">
-                                <a class="insc-btn btn-block" href="{{ route('courses.show', ['course' => $course]) }}">
+                                <a class="ver-btn btn-block" href="{{ route('courses.show', ['course' => $course]) }}">
                                     {{ __("Inscribirse") }}
                                 </a>
                             </div>

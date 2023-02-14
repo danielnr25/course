@@ -8,9 +8,10 @@
     @inject("cart", "App\Services\Cart)
     {{--{{ $cart->getContent() }}--}}
     <div class="container">
-        @include('partials.learning.cart_content')
+       <!--  @include('partials.learning.cart_content') -->
+            @include('partials.learning.insc_content')
 
-        @if($cart->hasProducts())
+       <!--  @if($cart->hasProducts())
             <div class="row">
                 <div class="col-12 mb-5">
                     <a href="{{ route('checkout-form') }}" class="site-btn float-right">
@@ -18,7 +19,7 @@
                     </a>
                 </div>
             </div>
-        @endif
+        @endif -->
     </div>
 
 @endsection

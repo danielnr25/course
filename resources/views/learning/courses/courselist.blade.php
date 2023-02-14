@@ -1,9 +1,9 @@
 <!-- course section -->
 <section class="course-section">
     <div class="cards">
-        <div class="rows">
+        <div class="row">
             @forelse($courses as $course)
-            <a class="card" href="{{ route('courses.show', ['course' => $course]) }}">
+            <a class="carda" href="{{ route('courses.show', ['course' => $course]) }}">
                 <div class="dimmable">
                     <div class="dimmer">
                         <div class="content">
@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="img">
-                        <img class=" lazyloaded" data-src="https://d3puay5pkxu9s4.cloudfront.net/curso/4523/card_imagen.jpg" alt="Curso de lógica matemática" src="https://d3puay5pkxu9s4.cloudfront.net/curso/4523/card_imagen.jpg">
+                        <img class=" lazyloaded" src={{ $course->picture }}>
                     </div>
                 </div>
                 <div class="description">

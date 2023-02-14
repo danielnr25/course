@@ -8,7 +8,7 @@
             <h1 class="hero-title">Lo ultimo en Aprendizaje</h1>
             @guest
                 <p class="hero-subtitle">
-                    {{ __("Inicia sesión para obtener ofertas en cursos y mantener al día las habilidades que necesitas. Las rebajas terminan mañana.") }}
+                    {{ __("Registrate para comennzar tu valioso aprendizaje, en los mejores cursos con los mejores docentes o vuélvete instructor compartiendo tu conocimiento, comienza ya!") }}
                 </p>
             @else
                 <p class="hero-subtitle">

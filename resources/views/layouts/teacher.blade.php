@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Educate Perú | Docente</title>
+    <title>Teach Me | Docente</title>
     <meta charset="UTF-8">
     <meta name="description" content="WebUni Education Template">
     <meta name="keywords" content="webuni, education, creative, html">

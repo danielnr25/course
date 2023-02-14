@@ -1,4 +1,4 @@
-html,
+html,html
 body {
     height: 100%;
     font-family: 'Raleway','Muli', sans-serif;
@@ -156,14 +156,14 @@ ol {
     min-width: 128px;
     text-align: center;
     border: 2px;
-    border-radius: 50px;
+    border-radius: 10px;
     padding: 10px 10px;
     font-weight: 600;
     font-size: 16px;
     position: relative;
     color: #fff;
     cursor: pointer;
-    background: #0a00a8;
+    background: #07007f;
 }
 
 .logout-btn {
@@ -178,7 +178,7 @@ ol {
     position: relative;
     color: #fff;
     cursor: pointer;
-    background: #07007f;
+    background: #0a00a8;
 }
 
 .login-btn {
@@ -244,6 +244,7 @@ ol {
 
 .site-btn:hover {
     color: #fff;
+    background: #0a02a2;
 }
 
 .site-btn.btn-dark {
@@ -500,8 +501,24 @@ ol {
     border-radius: 12px 12px 0 0;
 }
 
+.card-img{
+    display: flow-root;
+    padding: 16px;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 12px;
+    border-bottom: 1px solid rgb(3 27 78 / .2);
+    text-align: center;
+    min-height: 91px;
+}
+
+.img-card{
+    width: 90px;
+    height: auto;
+}
+
 .categorie-item .ci-text {
-    padding: 24px 20px;
+    padding: 10px 20px;
 }
 
 .categorie-item .ci-text h5 {
@@ -651,17 +668,26 @@ ol {
 }
 
 .course-item .course-info {
-    background: #edf2f3;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.course-item .course-info:hover {
+    background: #e5e7eb;
+    cursor: pointer;
+    border-radius: 12px;
 }
 
 .course-item .course-info .course-text {
-    padding: 45px 33px 25px;
+    padding: 25px 33px 25px;
 }
 
 .course-item .course-info .course-text h5 {
     margin-bottom: 5px;
     font-weight: 600;
     color: #031b4e;
+    font-size: 16px;
 }
 
 .course-item .course-info .course-text .students {
@@ -892,7 +918,7 @@ ol {
 
 .row{
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-left: 0;
     margin-right: 0;
 }
@@ -1128,9 +1154,18 @@ ol {
     color: rgba(3, 27, 78, .8);
 }
 
-.cards .rows{
-    padding: 3rem;
-    display: flex;
+.cards {
+    padding: 0px 56px;
+}
+
+.carda{
+    width: 24%;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-right: 0.75em;
+    margin-bottom: 3rem;
 }
 
 .card{
@@ -1139,27 +1174,34 @@ ol {
     padding: 10px;
     border-radius: 4px;
     margin-right: 0.75em;
+    margin-bottom: 3rem;
 }
 
-.card:last-of-type{
+.carda a{
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.carda:last-of-type{
     margin-right: 0;
 }
 
-cards .card .img{
+.cards .carda .img{
     overflow: hidden;
     border: 1px solid rgba(3, 27, 78, .1);
 }
 
-.card .img img{
+.carda .img img{
     width: 102%;
     margin: -1% -1% -4% -1%;
 }
 
-.cards .card .description{
+.cards .carda .description{
     margin-top: 10px;
 }
 
-.card .description h5{
+.carda .description h5{
     margin: 0;
     display: block;
     font-size: 0.83em;
@@ -1171,7 +1213,7 @@ cards .card .img{
     font-weight: 400;
 }
 
-.card .description .name-course{
+.carda .description .name-course{
     height: 50px;
     overflow: hidden;
     line-height: 1.3;
@@ -1186,7 +1228,7 @@ cards .card .img{
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-size: 1.2em;
-    color: #383c45;
+    color: #031b4e;
 }
 
 .description .name-course p{
@@ -1488,6 +1530,26 @@ cards .card .img{
     color: #fff;
 }
 
+.ver-btn{
+    display: inline-block;
+    min-width: 128px;
+    text-align: center;
+    border: 2px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+    background: #0a0739;
+}
+
+.ver-btn:hover{
+    background: #0a00a8;
+    color: #fff;
+}
+
 /*------------------
     Course Pages
 --------------------
@@ -1525,7 +1587,7 @@ cards .card .img{
 }
 
 .docente{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     color: #031b4e;
 }
@@ -2549,20 +2611,19 @@ cards .card .img{
     margin-bottom: 20px;
 }
 
-.hero-cart-section {
+/* .hero-cart-section {
     height: 300px;
-}
+} */
 
 .hero-cart-text {
     text-align: center;
-    padding-top: 170px;
-    margin-bottom: 60px;
+    padding-top: 160px;
 }
 
 .hero-cart-text h2 {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 500;
-    margin-bottom: 20px;
+    color: #031b4e;
 }
 
 #course-curriculum .card-text {
@@ -2604,4 +2665,57 @@ cards .card .img{
     font-size: 60px;
     font-weight: 500;
     margin-bottom: 20px;
+}
+
+/* =========== CARD - MODALIDADES ========== */
+.prom-ct {
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.prom-ct .columan:first-of-type {
+    margin-right: 30px;
+}
+
+.prom-ct .columan {
+    background-color: #F2F8FF;
+    border-radius: 5px;
+    padding: 20px 20px 20px;
+}
+
+.row .columan {
+    flex: 1;
+}
+
+.shadow {
+    -webkit-box-shadow: 0 2px 5px -1px rgb(50 50 93 / 25%), 0 1px 3px -1px rgb(0 0 0 / 30%);
+    box-shadow: 0 2px 5px -1px rgb(50 50 93 / 25%), 0 1px 3px -1px rgb(0 0 0 / 30%);
+}
+
+.prom-ct img {
+    margin: 2px 12px auto 0;
+}
+
+.contenido{
+    margin-bottom: 5rem;
+}
+
+.prom-ct h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #031b4e;
+}
+
+.prom-ct h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: #031b4e;
 }
