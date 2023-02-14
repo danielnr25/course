@@ -14,7 +14,7 @@ El sistema está realizado con el Framework Laravel y cuenta con las siguientes 
 
 ## Instalación
 
-- Clonar repositorio desde https://github.com/fmoraless/e-learning.git
+- Clonar repositorio desde https://github.com/danielnr25/course.git
 - **composer install**
 - **php artisan key:generate**
 
