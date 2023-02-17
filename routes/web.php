@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Stripe\Issuing\Dispute;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::post(
 /**
  * COURSE ROUTES
  */
-Route::group(['prefix' => 'courses', 'as' => 'courses.' ], function() {
+Route::group(['prefix' => 'courses', 'as' => 'courses.'], function () {
     Route::get('/', 'CourseController@index')->name('index');
     Route::post('/search', 'CourseController@search')->name('search');
     Route::get('/{course}', 'CourseController@show')->name('show');
@@ -39,11 +40,10 @@ Route::group(['prefix' => 'courses', 'as' => 'courses.' ], function() {
         ->name('reviews.store');
     Route::get('/category/{category}', 'CourseController@byCategory')
         ->name('category');
-
 });
 
 
-Route::group(['prefix' => 'teacher', 'as' => 'teacher.', 'middleware' => ['teacher']], function() {
+Route::group(['prefix' => 'teacher', 'as' => 'teacher.', 'middleware' => ['teacher']], function () {
     Route::get('/', 'TeacherController@index')->name('index');
 
     /**
@@ -52,6 +52,8 @@ Route::group(['prefix' => 'teacher', 'as' => 'teacher.', 'middleware' => ['teach
     Route::get('/courses', 'TeacherController@courses')->name('courses');
     Route::get('/courses/create', 'TeacherController@createCourse')
         ->name('courses.create');
+    Route::get('/courses/list', 'TeacherController@listCourse')
+        ->name('courses.list');
     Route::post('/courses/store', 'TeacherController@storeCourse')
         ->name('courses.store');
     Route::get('/courses/{course}', 'TeacherController@editCourse')
@@ -94,13 +96,14 @@ Route::group(['prefix' => 'teacher', 'as' => 'teacher.', 'middleware' => ['teach
 /**
  * STUDENT ROUTES
  */
-Route::group(['prefix' => 'student', 'as' => 'student.', 'middleware' => ['auth']], function() {
+Route::group(['prefix' => 'student', 'as' => 'student.', 'middleware' => ['auth']], function () {
     Route::get('/', 'StudentController@index')->name('index');
 
     Route::get("/credit-card", "BillingController@creditCardForm")
-    ->name("billing.credit_card_form");
+        ->name("billing.credit_card_form");
+    Route::get("/disponible-card", "BillingController@disponibleCard")->name("billing.disponibleCard");
     Route::post('/credit-card', "BillingController@processCreditCardForm")
-    ->name("billing.process_credit_card");
+        ->name("billing.process_credit_card");
 
     Route::get("/courses", "StudentController@courses")
         ->name('courses');
@@ -135,10 +138,10 @@ Route::post('/apply-coupon', 'StudentController@applyCoupon')
 
 
 Route::group(["middleware" => ["auth"]], function () {
-   Route::get('/checkout', 'CheckoutController@index')
-       ->name('checkout-form') ;
+    Route::get('/checkout', 'CheckoutController@index')
+        ->name('checkout-form');
     Route::post('/checkout', 'CheckoutController@processOrder')
-        ->name('process_checkout') ;
+        ->name('process_checkout');
 });
 /*Route::get('/phpinfo', function () {
     phpinfo();

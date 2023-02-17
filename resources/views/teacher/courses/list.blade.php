@@ -1,4 +1,6 @@
 <!-- course section -->
+@extends('layouts.teacher')
+@section('content')
 <section class="course-section spad">
     <div class="container">
         <div class="section-title mb-3 mt-0">
@@ -48,3 +50,4 @@
     </div>
 </section>
 <!-- course section end -->
+@endsection

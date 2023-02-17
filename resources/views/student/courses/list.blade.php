@@ -2,7 +2,7 @@
 <section class="course-section spad">
     <div class="container">
         <div class="section-title mb-3 mt-0">
-            <h2>{{ __("Los cursos que has comprado") }}</h2>
+            <h2>{{ __("Tus cursos inscritos") }}</h2>
         </div>
     </div>
     <div class="course-warp">

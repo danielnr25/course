@@ -40,11 +40,11 @@
                         @include('partials.learning.modals.instructor')
                         </li>
                         @teacher
-                            <li><a class="brand-text" href="{{ route('teacher.index') }}">{{ __("Mis cursos") }}
+                            <li><a class="brand-text" href="{{ route('teacher.courses') }}">{{ __("Mis cursos") }}
                             </a></li>
                         @endteacher
                         @auth
-                            <li><a class="brand-text" href="{{ route('student.index') }}">{{ __("Mi Aprendizaje") }}</a></li>
+                            <li><a class="brand-text" href="{{ route('student.courses') }}">{{ __("Mi Aprendizaje") }}</a></li>
                         @endauth
                     </ul>
                 </nav>

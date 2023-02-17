@@ -4,89 +4,23 @@
     <div class="container py-5">
         <!---- Title --->
         <div class="row mb-4">
-            <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4" style="color:#000">{{ __("Tus datos de pago") }}</h1>
+            <div class="col-lg-12">
+                <h3 class="display-4" style="color:#000; font-size:2.4rem; font-weight:700">{{ __("Recordatorios de aprendizaje") }}</h3>
             </div>
         </div>
         <!----END Title --->
         <div class="row">
-            <div class="col-lg-7 mx-auto">
+            <div class="col-lg-12">
                 <div class="bg-white rounded-lg shadow-sm p-5">
-                    <!---- CREDIT CARD FORM TABS --->
-                    <ul role="tablist" class="nav text-white nav-pills rounded-pill nav-fill mb-3" style="background: #000;">
-                        <li class="nav-item">
-                            <a data-toggle="pill" href="#nav-tab-card" class="nav-link rounded-pill">
-                                <i class="fa fa-credit-card"></i>
-                                {{ __("Información de tu tarjeta en :app Perú", ["app" => env("APP_NAME")]) }}
-                            </a>
-                        </li>
-                    </ul>
                     <!---- END CREDIT CARD FORM TABS --->
                     <div class="content">
                         <div id="nav-tab-card" class="tab-pane fade show active">
-                            <form
-                                role="form"
-                                action="{{ route('student.billing.process_credit_card') }}"
-                                method="POST"
-                            >@csrf
-                                <div class="form-group">
-                                    <label for="card_number">{{ __("Número de la tarjeta") }}</label>
-                                    <div class="input-group">
-                                        <input
-                                            type="text"
-                                            name="card_number"
-                                            placeholder="{{ __("Número de la tarjeta") }}"
-                                            class="form-control"
-                                            required
-                                            value="{{
-                                                old('card_number') ?
-                                                old('card_number') :
-                                                (auth()->user()->card_last_four ? '************' . auth()->user()->card_last_four : null)
-                                            }}"
-                                        >
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-cc-visa mx-1"></i>
-                                                <i class="fa fa-cc-mastercard mx-1"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <div class="form-group">
-                                            <label for="">
-                                                <span class="hidden-xs">{{ __("Fecha expiración") }}</span>
-                                            </label>
-                                            <div class="input-group">
-                                                <input
-                                                    type="number"
-                                                    placeholder="{{ __("MM") }}"
-                                                    name="card_exp_month"
-                                                    class="form-control"
-                                                    required
-                                                >
-                                                <input
-                                                    type="number"
-                                                    placeholder="{{ __("YY") }}"
-                                                    name="card_exp_year"
-                                                    class="form-control"
-                                                    required
-                                                >
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group mb-4">
-                                            <label for="">{{ __("CVC") }}</label>
-                                            <input type="text" name="cvc" required class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <button
-                                    type="submit" class="site-btn btn-block rounded-pill shadow-sm" style="background: #0f04bb; border-radius:9px;"
-                                >{{ __("Guardar tarjeta") }}</button>
-                            </form>
+                            <h3 style="color:#000; font-size:1.2rem; font-weight:700">{{ __("Eventos del calendario") }}</h3>
+                            <p class="d-cred">
+                            Aprender un poco cada día marca la diferencia. Hay estudios que muestran que los estudiantes que hacen del aprendizaje un hábito tienen una mayor probabilidad de alcanzar sus objetivos. Reserva tiempo para aprender y recibe recordatorios con la herramienta de planificación del aprendizaje.
+                            </p>
+                            <div class="ud-text-xs learning-tools--subtext--1OQeA">Se requiere Google Calendar, el Calendario de Apple o Outlook</div>
+                            <button type="button" data-purpose="create-reminder-button" class="ud-btn ud-btn-large ud-btn-brand ud-heading-md learning-tools--create-button---KU8H"><span>Programa un tiempo de aprendizaje</span><svg aria-hidden="true" focusable="false" class="ud-icon ud-icon-small">+</svg></button>
                         </div>
                     </div>
                 </div>

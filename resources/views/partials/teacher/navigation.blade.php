@@ -11,10 +11,10 @@
                 <a class="nav-link text-white" href="{{ route('teacher.units') }}">{{ __("Unidades") }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ route('teacher.coupons') }}">{{ __("Cupones") }}</a>
+                <a class="nav-link text-white" href="{{ route('teacher.courses.create') }}">{{ __("Crear") }}</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link text-white" href="{{ route('teacher.units') }}">{{ __("Unidades") }}</a>
+                <a class="nav-link text-white" href="{{ route('teacher.courses.list') }}">{{ __("Mi lista") }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{ route('teacher.coupons') }}">{{ __("Cupones") }}</a>

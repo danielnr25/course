@@ -14,6 +14,11 @@ trait ManageCourses {
         return view('teacher.courses.index', compact('courses'));
     }
 
+    public function listCourse() {
+        $courses = Course::forTeacher();
+        return view('teacher.courses.list', compact('courses'));
+    }
+
     public function createCourse(CourseRequest $request) {
         $course = New Course;
         $title = __("Crear nuevo curso");
@@ -56,7 +61,7 @@ trait ManageCourses {
             return redirect(route('teacher.courses.edit', ['course' => $course]));
 
         }catch(\Throwable $exception) {
-            
+
             session()->flash("message", ["danger", $exception->getMessage()]);
             return back();
         }

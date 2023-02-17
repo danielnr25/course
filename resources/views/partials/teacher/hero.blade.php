@@ -1,12 +1,11 @@
 <!-- Hero section -->
 <section
-    class="hero-section set-bg"
-    style="height: 500px" data-setbg=""
+    class="hero-container"
 >
-    <div class="container">
-        <div class="hero-text text-white">
+    <div class="ud-container">
+        <div class="container-text text-white">
             <h2>
-                {{ __("Gestiona tu perfil como profesor en :app Perú desde aquí", ["app" => env("APP_NAME")]) }}
+                {{ __("Bienvenido instructor") }}
             </h2>
         </div>
     </div>

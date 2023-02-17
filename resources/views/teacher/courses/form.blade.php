@@ -3,7 +3,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
-    <style>
+    <!-- <style>
         .drag-list {
             width: 100%;
             margin: 0 auto;
@@ -44,14 +44,14 @@
         .drag-list .ZIP {
             background: #1d1d1d;
         }
-    </style>
+    </style> -->
 @endpush
 
 <section class="courses-section spad">
     <div class="section-title mb-3">
         <h2>{{ $title }}</h2>
         <a href="{{ route('teacher.courses') }}" class="site-btn">
-            {{ __("Volver al listado de cursos") }}
+            {{ __("Volver") }}
         </a>
     </div>
     <div class="container">

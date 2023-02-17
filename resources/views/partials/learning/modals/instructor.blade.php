@@ -17,34 +17,11 @@
                 <form class="signup-form" id="teacher-form" action="{{ route('register') }}" method="POST">
                     @csrf
                     <input type="hidden" name="role" value="{{ \App\Models\User::TEACHER }}">
-                    <input
-                        autocomplete="off"
-                        name="name"
-                        value="{{old("name")}}"
-                        type="text"
-                        placeholder="{{ __("Nombre") }}"
-                    />
-                    <input
-                        autocomplete="off"
-                        name="email"
-                        value="{{old("email")}}"
-                        type="text"
-                        placeholder="{{ __("Correo electrónico") }}"
-                    />
-                    <input
-                        autocomplete="off"
-                        name="password"
-                        type="password"
-                        placeholder="{{ __("Contraseña") }}"
-                    />
-                    <input
-                        autocomplete="off"
-                        name="password_confirmation"
-                        type="password"
-                        placeholder="{{ __("Confirma tu contraseña") }}"
-                    />
-                    <button
-                        class="site-btn btn-block">{{ __("Crear cuenta") }}
+                    <input autocomplete="off" name="name" value="{{old("name")}}" type="text" placeholder="{{ __("Nombre") }}" />
+                    <input autocomplete="off" name="email" value="{{old("email")}}" type="text" placeholder="{{ __("Correo electrónico") }}" />
+                    <input autocomplete="off" name="password" type="password" placeholder="{{ __("Contraseña") }}" />
+                    <input autocomplete="off" name="password_confirmation" type="password" placeholder="{{ __("Confirma tu contraseña") }}" />
+                    <button class="site-btn btn-block">{{ __("Crear cuenta") }}
                     </button>
                 </form>
                 <!-- ./login form -->
@@ -54,42 +31,42 @@
 </div>
 
 @push("js")
-    <script>
-        jQuery(document).ready(function () {
-           $("#teacher-form").on("click", function (e) {
-               e.preventDefault()
-               const fields = ['name', 'email', 'password', 'password_confirmation'];
-               fields.map(field => jQuery(`#teacher-form input[name=${field}]`)
-               .removeClass('field-is-invalid'));
-               jQuery.ajax({
-                   method:"POST",
-                   url: "{{ route('register') }}",
-                   data: $(this).serialize(),
-                   success: function(data) {
-                       const message = data.message;
-                       $("#success-teacher-signup").show().html(`<p>${message}</p>`);
-                       setTimeout(() => {
-                           window.location.href = '/';
-                       }, 3000);
-                   },
-                   error: function(error) {
-                        const teacherForm = jQuery("#teacher-form");
-                        const errors = JSON.parse(error.responseText);
-                        if (errors.hasOwnProperty('errors')) {
-                            for (let error in errors.errors) {
-                                teacherForm
+<script>
+    jQuery(document).ready(function() {
+        $("#teacher-form").on("click", function(e) {
+            e.preventDefault()
+            const fields = ['name', 'email', 'password', 'password_confirmation'];
+            fields.map(field => jQuery(`#teacher-form input[name=${field}]`)
+                .removeClass('field-is-invalid'));
+            jQuery.ajax({
+                method: "POST",
+                url: "{{ route('register') }}",
+                data: $(this).serialize(),
+                success: function(data) {
+                    const message = data.message;
+                    $("#success-teacher-signup").show().html(`<p>${message}</p>`);
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 3000);
+                },
+                error: function(error) {
+                    const teacherForm = jQuery("#teacher-form");
+                    const errors = JSON.parse(error.responseText);
+                    if (errors.hasOwnProperty('errors')) {
+                        for (let error in errors.errors) {
+                            teacherForm
                                 .find(`input[name=${error}]`)
                                 .addClass('field-is-invalid');
-                                if (error == 'password') {
-                                    teacherForm
-                                        .find(`input[name=password_confirmation]`)
-                                        .addClass('field-is-invalid');
-                                }
+                            if (error == 'password') {
+                                teacherForm
+                                    .find(`input[name=password_confirmation]`)
+                                    .addClass('field-is-invalid');
                             }
                         }
-                   }
-               });
-           });
+                    }
+                }
+            });
         });
-    </script>
+    });
+</script>
 @endpush

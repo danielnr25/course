@@ -65,7 +65,7 @@ class LoginController extends Controller
     protected function redirectPath()
     {
         if (auth()->user()->isTeacher()){
-            return "/teacher";
+            return "/teacher/courses";
         }
         return "/";
     }

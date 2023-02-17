@@ -14,7 +14,7 @@ trait ManageCart {
     public function addCourseToCart(Course $course) {
         $cart = new Cart;
         $cart->addCourse($course);
-        session()->flash("message", ["success", __("Curso añadido al carrito correctamente.")]);
+        session()->flash("message", ["success", __("Elige una opción para tu suscripción.")]);
         return redirect(route('cart'));
     }
 

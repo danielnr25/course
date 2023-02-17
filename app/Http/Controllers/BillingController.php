@@ -13,6 +13,10 @@ class BillingController extends Controller
         return view('student.credit_card_form');
     }
 
+    public function disponibleCard(){
+        return view('student.disponible_card');
+    }
+
     public function processCreditCardForm()
     {
         $this->validate(request(), [
