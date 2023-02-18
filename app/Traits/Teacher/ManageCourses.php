@@ -48,12 +48,12 @@ trait ManageCourses {
         try {
             DB::beginTransaction();
 
-            $file = null;
+    /*         $file = null;
             if ($request->hasFile('picture')) {
                 $file = Uploader::uploadFile('picture', 'courses');
-            }
+            } */
 
-            $course = Course::create($this->courseInput($file));
+            $course = Course::create($this->courseInput());
             $course->categories()->sync(request("categories"));
 
             DB::commit();
@@ -94,12 +94,12 @@ trait ManageCourses {
         }
     }
 
-    public function courseInput(string $file = null, bool $featured = false): array {
+    public function courseInput(bool $featured = false): array {
         return [
             "title" => request("title"),
             "description" => request("description"),
             "price" => request("price"),
-            "picture" => $file,
+            "picture" => request("picture"),
             "featured" => $featured
         ];
     }

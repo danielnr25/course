@@ -27,21 +27,21 @@ class CourseRequest extends FormRequest
             case "POST":
             {
                 return [
-                    'title'       => 'required|min:5|unique:courses',
+                    'title'       => 'required|min:5',
                     'categories'  => 'required|array',
-                    'description' => 'required|min:50',
+                    'description' => 'required|max:255',
                     'price'       => 'required',
-                    'picture'     => 'required|image|mimes:jpg,jpeg,png'
+                    'picture'     => 'required'
                 ];
             }
             case "PUT":
             {
                 return [
-                    'title'       => 'required|min:5|unique:courses,title,' .$this->route('course')->id,
+                    'title'       => 'required|min:5' .$this->route('course')->id,
                     'categories'  => 'required|array',
-                    'description' => 'required|min:50',
+                    'description' => 'required|max:255',
                     'price'       => 'required',
-                    'picture'     => 'required|sometimes|image|mimes:jpg,jpeg,png'
+                    'picture'     => 'required'
                 ];
             }
             default:
