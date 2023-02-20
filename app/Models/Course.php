@@ -112,9 +112,9 @@ class Course extends Model
         return $this->reviews->avg('stars');
     }
 
-    public function getFormattedPriceAttribute() {
+    /* public function getFormattedPriceAttribute() {
         return Currency::formatCurrency($this->price);
-    }
+    } */
 
     public function totalVideoUnits() {
         return $this->units->where("unit_type", Unit::VIDEO)->count();

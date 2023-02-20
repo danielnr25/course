@@ -30,7 +30,7 @@ class CourseRequest extends FormRequest
                     'title'       => 'required|min:5',
                     'categories'  => 'required|array',
                     'description' => 'required|max:255',
-                    'price'       => 'required',
+                    /* 'price'       => 'required', */
                     'picture'     => 'required'
                 ];
             }
@@ -40,7 +40,7 @@ class CourseRequest extends FormRequest
                     'title'       => 'required|min:5' .$this->route('course')->id,
                     'categories'  => 'required|array',
                     'description' => 'required|max:255',
-                    'price'       => 'required',
+                    /* 'price'       => 'required', */
                     'picture'     => 'required'
                 ];
             }

@@ -22,7 +22,7 @@ class CreateCoursesTable extends Migration
             $table->string('title');
             $table->string('picture');
             $table->text('description');
-            $table->float('price');
+            $table->float('price')->nullable();
             $table->boolean('featured')->default(false);
             $table->enum('status', [
                 Course::PUBLISHED, Course::PENDING, Course::REJECTED

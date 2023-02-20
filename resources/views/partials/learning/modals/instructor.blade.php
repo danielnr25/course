@@ -8,11 +8,6 @@
                 </button>
             </div>
             <div class="modal-body">
-                @if(session('error-login'))
-                <div class="form-errors">
-                    <p>{{ session('error-login') }}</p>
-                </div>
-                @endif
                 <!-- login form -->
                 <form class="signup-form" id="teacher-form" action="{{ route('register') }}" method="POST">
                     @csrf
@@ -21,7 +16,7 @@
                     <input autocomplete="off" name="email" value="{{old("email")}}" type="text" placeholder="{{ __("Correo electrónico") }}" />
                     <input autocomplete="off" name="password" type="password" placeholder="{{ __("Contraseña") }}" />
                     <input autocomplete="off" name="password_confirmation" type="password" placeholder="{{ __("Confirma tu contraseña") }}" />
-                    <button class="site-btn btn-block">{{ __("Crear cuenta") }}
+                    <button type="submit" class="site-btn btn-block">{{ __("Crear cuenta") }}
                     </button>
                 </form>
                 <!-- ./login form -->

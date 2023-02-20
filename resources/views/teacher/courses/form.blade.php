@@ -29,10 +29,10 @@
             {!! Form::label('title', __("Título")) !!}
             {!! Form::text('title', null, ['class' => 'form-control']) !!}
         </div>
-        <div class="form-group">
+<!--         <div class="form-group">
             {!! Form::label('price', __("Escoge un precio para tu curso")) !!}
             {!! Form::select('price', \App\Models\Course::prices, null, ["class" => "form-control"]) !!}
-        </div>
+        </div> -->
         <div class="form-group">
             {!! Form::label('categories[]', __("Selecciona las categorías")) !!}
             {!! Form::select('categories[]', \App\Models\Category::pluck("name", "id"), null, ["class" => "form-control"]) !!}
