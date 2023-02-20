@@ -31,7 +31,7 @@
             @empty
             <div class="container">
                 <div class="empty-results">
-                    {!! __("No tienes ningún curso todavía: :link", ["link" => "<a href='".route(' courses.index')."'>Ver cursos</a>"]) !!}
+                    {!! __("No tienes ningún curso todavía: :link", ["link" => "<a href='".route('courses.index')."'>Ver cursos</a>"]) !!}
                 </div>
             </div>
             @endforelse
