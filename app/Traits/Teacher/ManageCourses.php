@@ -99,6 +99,7 @@ trait ManageCourses {
             "title" => request("title"),
             "description" => request("description"),
             "price" => request("price"),
+            "phone" => request("phone"),
             "picture" => request("picture"),
             "featured" => $featured
         ];

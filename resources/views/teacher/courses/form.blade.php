@@ -81,6 +81,10 @@
             {!! Form::text('description',null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
+            {!! Form::label('phone', __("Agregue contacto para el curso")) !!}
+            {!! Form::text('phone',null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
             {!! Form::label('picture', __("Añade una imagen para tu curso")) !!}
             <!-- {!! Form::file('picture',['class' => 'custom-file-input', 'id' => 'picture']) !!} -->
             {!! Form::text('picture',null, ['class' => 'form-control']) !!}

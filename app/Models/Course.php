@@ -54,7 +54,7 @@ class Course extends Model
 
     protected $fillable = [
         "user_id", "title", "description",
-        "picture", "price", "featured", "status"
+        "picture", "price","phone", "featured", "status"
     ];
 
     const PUBLISHED = 1;

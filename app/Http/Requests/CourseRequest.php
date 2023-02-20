@@ -31,6 +31,7 @@ class CourseRequest extends FormRequest
                     'categories'  => 'required|array',
                     'description' => 'required|max:255',
                     /* 'price'       => 'required', */
+                    'phone'       => 'required|max:9',
                     'picture'     => 'required'
                 ];
             }
@@ -41,6 +42,7 @@ class CourseRequest extends FormRequest
                     'categories'  => 'required|array',
                     'description' => 'required|max:255',
                     /* 'price'       => 'required', */
+                    'phone'       => 'required|max:9',
                     'picture'     => 'required'
                 ];
             }
