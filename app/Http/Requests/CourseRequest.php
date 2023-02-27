@@ -38,7 +38,7 @@ class CourseRequest extends FormRequest
             case "PUT":
             {
                 return [
-                    'title'       => 'required|min:5' .$this->route('course')->id,
+                    'title'       => 'required|min:5|max:50' .$this->route('course')->id,
                     'categories'  => 'required|array',
                     'description' => 'required|max:255',
                     /* 'price'       => 'required', */
